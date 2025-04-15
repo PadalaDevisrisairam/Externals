@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from sklearn.datasets import load_iris
 from sklearn.model_selection import KFold
 from sklearn.neighbors import KNeighborsClassifier
@@ -38,4 +39,4 @@ for train_index, test_index in kfold.split(X):
 
     fold += 1
 
-print(f"Final Accuracy: {(sum(accuracies) / len(accuracies)*100):.2f}%")
+print(np.mean(accuracies)*100)
